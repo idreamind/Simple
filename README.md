@@ -24,10 +24,11 @@ var obj = {
 simple.render( '/templates/index.html', obj );
 ```
 
-For set mode use:
+To set mode:
 ```
 'dev'  - 'developer'  - show all unknow masks in templates
 'prod' - 'production' - hide all unknow masks in templates
+
 simple.setMode('dev')
 ```
 
@@ -36,6 +37,15 @@ To know a current mode:
 simple.getMode();
 
 // 'dev' - by default
+```
+
+## Settings for Node.js Express
+```
+var Simple = require('./Simple'),
+    simple = new Simple();
+    
+app.engine( 'html', simple.render );
+app.set('view engine', 'html');
 ```
 
 
