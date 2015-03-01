@@ -6,8 +6,12 @@
 function Simple() {
     var simple = this,
         mode   = 'dev',
-        tags   = ['{!','!}'],
-        fs     = require('fs');
+        tags   = ['{','}'],
+        fs     = require('fs'),
+        mod    = {
+            developer:  'dev',
+            production: 'prod'
+            };
 
     simple.render  = render;
     simple.setMode = setMode;
@@ -18,13 +22,27 @@ function Simple() {
             if( error ) {
                 throw new Error( error );
             }
+            if( options.length === 0 || typeof options !== "object") {
+                throw new Error(' The second argument must not be null object. ');
+            }
 
-            var template = content.toString(),
-                posOpen  = template.search( tags[0] ),
-                posClose = template.search( tags[1] );
+            var template = content.toString();
+            for( var link in options ) {
+                if (options.hasOwnProperty(link)) {
+                    var value    = options[link],
+                        mask     = tags[0] + link + tags[1];
+                        template = template.replace( mask, value );
+                }
+            }
 
-            if( posOpen.length != posClose.length ) {
-                throw new Error('Different counts of open and close Simple tags: [ {!, !} ]');
+            if( mode === mod.production ) {
+                template = template.replace( new RegExp( '{\S+}','gmi')  , '' );
+            }
+
+            if( typeof callback === "function" ) {
+                return callback( null, template );
+            } else {
+                return template;
             }
         } );
     }

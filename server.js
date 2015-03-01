@@ -4,13 +4,15 @@
 'use strict';
 
 var cons    = require('consolidate'),
+    Simple  = require('./Simple'),
+    simple  = new Simple(),
     express = require('express'),
     http    = require('http'),
     app     = express();
 
 var portName = 3000;
 
-app.engine( 'html', cons.underscore );
+app.engine( 'html', simple.render );
 app.set('view engine', 'html');
 app.set('views', __dirname + '/templates');
 
@@ -22,8 +24,8 @@ app.use( express.static( __dirname + '/templates' ) );
 app.use( function( req, res ) {
     console.log( req.path );
     if( req.path === "/") {
-        res.render('tmp', {
-            title: "Underscore.JS",
+        res.render('simple', {
+            title: "Simple.JS",
             data: "Hello There!",
             unData: "Ref. Error"
         });
