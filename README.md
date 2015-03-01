@@ -1,5 +1,5 @@
 # Simple
-Simple Template Manager for Server-Side on Node.js
+Simple Template Manager for Server-Side on Node.js and Express
 
 ## Use
 Start to work:
@@ -8,22 +8,23 @@ var Simple = require('./Simple'),
     simple = new Simple();
 ```
 
-Render a template:
+Render a HTML - template:
 ```
-**HTML:
 <h1>
     {hello} my {world}!
 </h1>
-
-**JS:
+```
+JS:
+```
 var obj = {
         hello: 'Hello',
         world: 'World'
     };
 
 simple.render( '/templates/index.html', obj );
-
-**Out:
+```
+Result:
+```
 <h1>
     Hello my World!
 </h1>
