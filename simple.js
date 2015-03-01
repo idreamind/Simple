@@ -36,7 +36,7 @@ function Simple() {
             }
 
             if( mode === mod.production ) {
-                template = template.replace( new RegExp( '{\S+}','gmi')  , '' );
+                template = template.replace( /{\S+}/gmi, '' );
             }
 
             if( typeof callback === "function" ) {

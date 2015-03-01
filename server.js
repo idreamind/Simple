@@ -12,6 +12,8 @@ var cons    = require('consolidate'),
 
 var portName = 3000;
 
+simple.setMode( 'prod' );
+
 app.engine( 'html', simple.render );
 app.set('view engine', 'html');
 app.set('views', __dirname + '/templates');
