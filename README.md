@@ -10,12 +10,12 @@ var Simple = require('./Simple'),
 
 Render a template:
 ```
-HTML:
+**HTML:
 <h1>
     {hello} my {world}!
 </h1>
 
-JS:
+**JS:
 var obj = {
         hello: 'Hello',
         world: 'World'
@@ -23,7 +23,7 @@ var obj = {
 
 simple.render( '/templates/index.html', obj );
 
-Out:
+**Out:
 <h1>
     Hello my World!
 </h1>
