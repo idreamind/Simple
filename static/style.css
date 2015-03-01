@@ -1,0 +1,6 @@
+html, body {
+    background: yellow;
+    text-shadow: 0 0 10px rgba(0,0,0,0.75);
+    color: white;
+    text-align: center;
+}
