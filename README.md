@@ -22,6 +22,11 @@ var obj = {
     };
 
 simple.render( '/templates/index.html', obj );
+
+Out:
+<h1>
+    Hello my World!
+</h1>
 ```
 
 To set mode:
