@@ -1,2 +1,4 @@
 # Simple
-Simple Template Manager for Server on Node.js
+Simple Template Manager for Server-Side on Node.js
+
+## Use
