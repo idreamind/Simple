@@ -12,13 +12,13 @@ Render a template:
 ```
 HTML:
 <h1>
-    {hello}
+    {hello} my {world}!
 </h1>
 
 JS:
-
 var obj = {
-        hello: 'Hello World!'
+        hello: 'Hello',
+        world: 'World'
     };
 
 simple.render( '/templates/index.html', obj );
@@ -31,5 +31,11 @@ For set mode use:
 simple.setMode('dev')
 ```
 
+To know a current mode:
+```
+simple.getMode();
+
+// 'dev' - by default
+```
 
 
