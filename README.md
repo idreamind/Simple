@@ -4,7 +4,7 @@ Simple Template Manager for Server-Side on Node.js and Express
 ## Use
 Start to work:
 ```
-var Simple = require('./Simple'),
+var Simple = require('./simple'),
     simple = new Simple();
 ```
 
